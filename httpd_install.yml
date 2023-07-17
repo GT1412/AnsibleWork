@@ -1,0 +1,13 @@
+--- #for multiple task playbook
+- hosts: dev
+  user: gt
+  become: yes
+  gather_facts: yes
+  
+  tasks:
+    - name: install httpd apache
+      action: yum pkg=httpd state=present
+    - name: to start the service of httpd
+      action: service name=httpd state=started
+    - name: copy the index.html
+      action: copy src=index.html dest=/var/www/html

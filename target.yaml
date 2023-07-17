@@ -1,0 +1,5 @@
+--- #My 1st playbook
+- hosts: dev[0]
+  user: gt
+  become: yes
+  gather_facts: yes

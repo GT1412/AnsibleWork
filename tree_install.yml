@@ -1,0 +1,9 @@
+---
+- hosts: dev[0]
+  user: gt
+  become: yes
+  gather_facts: yes
+  
+  tasks:
+    - name: installing tree on specified node
+      action: yum pkg=tree state=present

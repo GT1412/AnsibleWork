@@ -1,0 +1,12 @@
+---
+- hosts: dev
+  user: gt
+  become: yes
+  
+  tasks:
+    - name: print
+      command: echo "{{item}}"
+      loop:
+        - "gt"
+        - "gp"
+        - "gr"

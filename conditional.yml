@@ -1,0 +1,14 @@
+---
+- hosts: dev
+  user: gt
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: install apache
+      command: apt-get install apache2 -y
+      when: ansible_os_family=="Debian"
+
+    - name: install apache on Redhat
+      command: yum install httpd -y
+      when: ansible_os_family=="RedHat"
