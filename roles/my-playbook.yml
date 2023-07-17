@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  user: gt
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - httpd-role
+    - tree-role
